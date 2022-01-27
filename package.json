@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node-dev src/index.ts"
+    "start": "ts-node-dev src/index.ts",
+    "typeorm": "ts-node-dev node_modules/typeorm/cli.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,10 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "reflect-metadata": "^0.1.13",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2",
+    "typeorm": "^0.2.41"
   }
 }

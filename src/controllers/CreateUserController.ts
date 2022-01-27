@@ -7,14 +7,14 @@ class CreateUserController{
 
         const createUserService = new CreateUserService();
 
-        const { name } = request.body;
+        const { nome } = request.body;
         const { email } = request.body;
 
-        if(name.length == 0 || email.length == 0){
+        if(nome.length == 0 || email.length == 0){
             return response.status(400).json({mensagem: 'Preencha todos os campos'})
         }
 
-        const user = createUserService.execute({name, email});
+        const user = createUserService.execute({nome, email});
         return response.status(201).json({user});
     }
 }
