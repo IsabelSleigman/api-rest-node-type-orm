@@ -1,2 +1,5 @@
-# api-rest-node-type-orm
-Criando uma API REST com Node.js e TypeORM 
+# Criando uma API REST com Node.js e TypeORM
+Curso da Digital Innovation One
+
+
+Instrutora Nathally Souza._
