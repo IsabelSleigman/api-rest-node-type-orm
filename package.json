@@ -1,0 +1,25 @@
+{
+  "name": "api-rest-node-type-orm",
+  "version": "1.0.0",
+  "description": "Curso da Digital Innovation One",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node-dev index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsabelSleigman/api-rest-node-type-orm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsabelSleigman/api-rest-node-type-orm/issues"
+  },
+  "homepage": "https://github.com/IsabelSleigman/api-rest-node-type-orm#readme",
+  "devDependencies": {
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.5"
+  }
+}
