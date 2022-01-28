@@ -1,9 +1,8 @@
 import { getConnection} from 'typeorm';
-import createConnection from '../database'
+import createConnection from '../database';
 import{ CreateUserController } from './CreateUserController';
 import{ Request } from 'express';
 import{ makeMockResponse} from '../utils/mocks/mockResponde';
-
 
 describe('CreateUserController', () =>{
 
