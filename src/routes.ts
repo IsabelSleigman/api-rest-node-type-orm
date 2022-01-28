@@ -12,5 +12,6 @@ router.get('/', (request: Request, response: Response) => {
 router.post('/usuarios', usuarioController.criarUsuario);
 router.get('/usuarios', usuarioController.buscarUsuarios);
 router.put('/usuario', usuarioController.editarUsuario);
+router.delete('/usuario', usuarioController.excluirUsuario);
 
 export { router };

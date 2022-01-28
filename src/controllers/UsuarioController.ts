@@ -45,6 +45,20 @@ class UsuarioController{
  
          return response.status(204).json();
      }
+
+     async excluirUsuario(request: Request, response: Response){
+        const usuarioService = new UsuarioService();
+
+        const { id } = request.params
+
+        if(id.length == 0 ){
+            return response.status(400).json({mensagem: 'Id não informado'})
+        }
+
+        await usuarioService.excluirUsuario(id)
+ 
+         return response.status(204).json();
+     }
 }
 
 export{ UsuarioController }

@@ -47,6 +47,17 @@ class UsuarioService{
         return usuario.raw
     }
 
+    async excluirUsuario(usuarioId: string){
+        const usuario = await getRepository(Usuario)
+        .createQueryBuilder()
+        .delete()
+        .from('usuarios')
+        .where("id = :id", {usuarioId})
+        .execute();
+
+        return usuario.raw
+    }
+
 }
 
 export {UsuarioService}

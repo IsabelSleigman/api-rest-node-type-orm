@@ -65,6 +65,17 @@ describe('UsuarioService', ()=>{
         expect(result).toHaveLength(0);
     })
 
+    it('Deve retornar um array vazio quando deletar usuário',async () => {
+        
+        const usuario = await fakeData.criarUsuario();
+
+        const result = await usuarioService.excluirUsuario(usuario.id);
+        
+        expect(result).toHaveLength(0);
+    })
+
+    
+
     
 })
 

@@ -93,4 +93,15 @@ describe('UsuarioController', () =>{
         //expect(response.state.json).toBe()
     })
 
+    it('Deve retornar status 204 quando usuario for deletado', async ()=>{
+        const usuario = await fakeData.criarUsuario();
+
+        const request = makeMockRequest({params: usuario});
+
+        await usuarioController.excluirUsuario(request,response)
+
+        expect(response.state.status).toBe(204);
+        //expect(response.state.json).toBe()
+    })
+
 })
