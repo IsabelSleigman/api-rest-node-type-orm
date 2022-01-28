@@ -1,24 +1,32 @@
-import{ CreateUserService } from '../../services/CreateUserService';
+import{ UsuarioService } from '../../services/UsuarioService';
 import { v4 as uuid } from 'uuid';
 
 class FakeData{
 
-   async execute (){
-       
-    const createUserService = new CreateUserService();
+    usuarioService = new UsuarioService();
 
-    await createUserService.execute({
+   async criarUsuarios (){   
+    await this.usuarioService.criarUsuario({
         id: uuid(),
         nome: 'Algum usuário',
         email: 'email@email.com'
     })
 
-    await createUserService.execute({
+    await this.usuarioService.criarUsuario({
         id: uuid(),
         nome: 'Algum usuário',
         email: ''
     })
    }
+
+  async criarUsuario (){
+   const usuario =  await this.usuarioService.criarUsuario({
+        id: uuid(),
+        nome: 'Algum usuário',
+        email: 'email@email.com'
+    })
+    return usuario;
+  }
 }
 
 export { FakeData }

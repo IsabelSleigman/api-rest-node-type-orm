@@ -16,7 +16,7 @@ class UsuarioController{
             return response.status(400).json({mensagem: 'Preencha todos os campos'})
         }
 
-        const user = await usuarioService.createUser({id, nome, email});
+        const user = await usuarioService.criarUsuario({id, nome, email});
         return response.status(201).json(user);
     }
 
@@ -26,6 +26,24 @@ class UsuarioController{
         const users = await usuarioService.buscarUsuarios();
  
          return response.status(200).json(users);
+    }
+
+    async editarUsuario(request: Request, response: Response){
+        const usuarioService = new UsuarioService();
+
+        const { id, nome, email } = request.body;
+
+        if(id.length == 0 ){
+            return response.status(400).json({mensagem: 'Id não informado'})
+        }
+
+        if(nome.length == 0 ){
+            return response.status(400).json({mensagem: 'Informe um nome'})
+        }
+
+        await usuarioService.editarUsuario({id, nome, email})
+ 
+         return response.status(204).json();
      }
 }
 

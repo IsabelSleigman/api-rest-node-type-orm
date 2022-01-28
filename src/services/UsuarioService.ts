@@ -8,7 +8,7 @@ interface IUsuario{
 
 class UsuarioService{
 
-    async createUser({id, nome, email}:IUsuario){
+    async criarUsuario({id, nome, email}:IUsuario){
 
         const usuario = await getRepository(Usuario)
             .createQueryBuilder()
@@ -34,6 +34,17 @@ class UsuarioService{
 
         console.log(usuarios)
         return usuarios
+    }
+
+    async editarUsuario({id, nome, email}: IUsuario){
+        const usuario = await getRepository(Usuario)
+        .createQueryBuilder('usuarios')
+        .update()
+        .set({nome: nome, email: email})
+        .where("id = :id", {id})
+        .execute();
+
+        return usuario.raw
     }
 
 }
