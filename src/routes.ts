@@ -1,17 +1,15 @@
 import { Router, Request, Response } from 'express';
-import { CreateUserController } from './controllers/CreateUserController';
-import { GetAllUserController } from './controllers/GetAllUserController';
+import { UsuarioController } from './controllers/UsuarioController';
 
 const router = Router();
-const creatUserController = new CreateUserController();
-const getAllUserController = new GetAllUserController();
+const usuarioController = new UsuarioController();
 
 router.get('/', (request: Request, response: Response) => {
 
     return response.json({mensagem: 'Bem vindo a nossa API'});
 });
 
-router.post('/usuarios', creatUserController.handle);
-router.get('/usuarios', getAllUserController.handle);
+router.post('/usuarios', usuarioController.criarUsuario);
+router.get('/usuarios', usuarioController.buscarUsuarios);
 
 export { router };
